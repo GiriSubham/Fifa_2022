@@ -20,6 +20,7 @@ import java.util.List;
 @RequestMapping({"/playerStatistics", "/defense"})
 public class HomeController {
 
+    //Importing all the DAO
     @Autowired
     private playerStatsDAO playerStatsDAO;
 
