@@ -2,9 +2,10 @@ package com.sample.Fifa_2022.Entity;
 
 
 import javax.persistence.*;
-
+//entity imported
 @Entity
 @Table(name = "player_defence")
+// all the details of players
 public class PlayerDefense {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,7 +32,7 @@ public class PlayerDefense {
     private Integer tacklesInterceptions;
     private Integer clearances;
     private Integer errors;
-
+   // public getter and setter
     public Integer getId() {
         return id;
     }
