@@ -33,14 +33,14 @@ public class HomeController {
     @Autowired
     private PlayerDefenseService playerdefenseService;
 
-
+     //here we will get all details
 
     @GetMapping("/get-all-details")
     public List<playerStatistics> getPlayerStats(){
        return this.playerStatsService.getPlayerStats();
     }
 
-
+     //here we will get details by id
     @GetMapping("/get-by-id/{id}")
     public playerStatistics getplayerStatisticsById(@PathVariable("id") Integer id){
 
@@ -56,14 +56,14 @@ public class HomeController {
     }
 
 
-
+    //here we will get details by id
     @GetMapping("/getPlayerDefenseById/{id}")
     public PlayerDefense getplayerDefenseById(@PathVariable("id") Integer id){
 
         return this.playerdefenseService.getplayerDefenseById(id);
 
     }
-
+      //here we filtering list
 
     @GetMapping("/filter-list")
     public  List<playerStatistics> list(@RequestParam(value = "games",required = false) Integer games){
@@ -71,7 +71,7 @@ public class HomeController {
         Specification<playerStatistics> specification = playerStatsService.getfilterStats(games);
         return playerStatsDAO.findAll(specification);
     }
-
+          //here we filtering defence
 
     @GetMapping("/filter-defense")
     public List<PlayerDefense>getfilterList(@RequestParam(value = "position",required = false)String position){
